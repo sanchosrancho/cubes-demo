@@ -1,0 +1,124 @@
+//
+//  CubeNode.swift
+//  Cubes Demo
+//
+//  Created by Олег Адамов on 05.09.17.
+//  Copyright © 2017 AdamovOleg. All rights reserved.
+//
+
+import SceneKit
+
+
+enum CubeFace: Int {
+    case front, right, back, left, top, bottom
+}
+
+
+class CubeNode: SCNNode {
+    
+    init(position: SCNVector3, color: UIColor) {
+        super.init()
+        
+        let geometry = SCNBox(width: CubeNode.size, height: CubeNode.size, length: CubeNode.size, chamferRadius: CubeNode.chamfer)
+        geometry.chamferSegmentCount = CubeNode.chamfersCount
+        var materials = [SCNMaterial]()
+        print(color)
+        for _ in 0..<6 {
+            materials.append(getMaterial(with: color))
+        }
+        geometry.materials = materials
+        self.geometry = geometry
+        self.position = position
+    }
+    
+    
+    func findFace(with index: Int) -> CubeFace? {
+        guard let materials = geometry?.materials, index < materials.count else { return nil }
+        return CubeFace(rawValue: index)
+    }
+    
+    
+    func newPosition(from face: CubeFace) -> SCNVector3 {
+        var x = self.position.x
+        var y = self.position.y
+        var z = self.position.z
+        let size = Float(CubeNode.size)
+        switch face {
+            case .front:  z += size
+            case .back:   z -= size
+            case .left:   x -= size
+            case .right:  x += size
+            case .top:    y += size
+            case .bottom: y -= size
+        }
+        return SCNVector3(x, y, z)
+    }
+    
+    
+    //MARK: - Private
+    
+    private static let size: CGFloat = 0.1
+    private static let chamfer: CGFloat = 0.002
+    private static let chamfersCount = 2
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    private func getMaterial(with color: UIColor) -> SCNMaterial {
+        let material = SCNMaterial()
+        material.diffuse.contents = color
+        material.locksAmbientWithDiffuse = true
+        return material
+    }
+}
+
+
+/*extension SCNNode {
+    
+    private class var cubeSize: CGFloat { return 0.1 }
+    
+    private class var chamfer: CGFloat { return 0.005 }
+    
+    
+    class func cube(position vector: SCNVector3) -> SCNNode {
+        let geometry = SCNBox(width: cubeSize, height: cubeSize, length: cubeSize, chamferRadius: chamfer)
+        geometry.materials = [SCNMaterial(), SCNMaterial(), SCNMaterial(), SCNMaterial(), SCNMaterial(), SCNMaterial()]
+        let node = SCNNode(geometry: geometry)
+        node.position = vector
+        return node
+    }
+    
+    
+    func findFace(with index: Int) -> CubeFace? {
+        guard let materials = geometry?.materials, index < materials.count else { return nil }
+        return CubeFace(rawValue: index)
+    }
+    
+    
+    func newPosition(from face: CubeFace) -> SCNVector3 {
+        var x = self.position.x
+        var y = self.position.y
+        var z = self.position.z
+        let size = Float(SCNNode.cubeSize)
+        switch face {
+        case .front:  z += size
+        case .back:   z -= size
+        case .left:   x -= size
+        case .right:  x += size
+        case .top:    y += size
+        case .bottom: y -= size
+        }
+        return SCNVector3(x, y, z)
+    }
+}*/
+
+
+extension SCNVector3: Equatable {
+    
+    public static func ==(lhs: SCNVector3, rhs: SCNVector3) -> Bool {
+        return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
+    }
+}

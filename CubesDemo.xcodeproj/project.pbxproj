@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30D4B2720E45F95F3B3A620F /* Pods_Cubes_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F11F74FB5310A36643D199 /* Pods_Cubes_Demo.framework */; };
 		B606BC201F5EB92A002555A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B606BC1F1F5EB92A002555A2 /* AppDelegate.swift */; };
 		B606BC221F5EB92A002555A2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B606BC211F5EB92A002555A2 /* art.scnassets */; };
 		B606BC241F5EB92A002555A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B606BC231F5EB92A002555A2 /* ViewController.swift */; };
@@ -14,10 +15,13 @@
 		B606BC291F5EB92A002555A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B606BC281F5EB92A002555A2 /* Assets.xcassets */; };
 		B606BC2C1F5EB92A002555A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B606BC2A1F5EB92A002555A2 /* LaunchScreen.storyboard */; };
 		B606BC341F5EBA0C002555A2 /* CubeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B606BC331F5EBA0C002555A2 /* CubeNode.swift */; };
+		B64866BB1F602259008A5158 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64866BA1F602259008A5158 /* Colors.swift */; };
+		B64866BF1F602C0A008A5158 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = B64866BE1F602B76008A5158 /* colors.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B606BC1C1F5EB92A002555A2 /* Cubes Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cubes Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F11F74FB5310A36643D199 /* Pods_Cubes_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cubes_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B606BC1C1F5EB92A002555A2 /* CubesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B606BC1F1F5EB92A002555A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B606BC211F5EB92A002555A2 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		B606BC231F5EB92A002555A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +30,10 @@
 		B606BC2B1F5EB92A002555A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B606BC2D1F5EB92A002555A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B606BC331F5EBA0C002555A2 /* CubeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeNode.swift; sourceTree = "<group>"; };
+		B64866BA1F602259008A5158 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B64866BE1F602B76008A5158 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
+		DE739FE47A0FAA8C915D7BC1 /* Pods-Cubes Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubes Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cubes Demo/Pods-Cubes Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		E957B9A8BF2DE06F096E5BBB /* Pods-Cubes Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubes Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cubes Demo/Pods-Cubes Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,24 +41,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D4B2720E45F95F3B3A620F /* Pods_Cubes_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43688D44017295B1DD212136 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE739FE47A0FAA8C915D7BC1 /* Pods-Cubes Demo.debug.xcconfig */,
+				E957B9A8BF2DE06F096E5BBB /* Pods-Cubes Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		63E2C0E9A06370478C4007DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83F11F74FB5310A36643D199 /* Pods_Cubes_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B606BC131F5EB92A002555A2 = {
 			isa = PBXGroup;
 			children = (
 				B606BC1E1F5EB92A002555A2 /* Cubes Demo */,
+				B64866BC1F60225D008A5158 /* Supporting Files */,
 				B606BC1D1F5EB92A002555A2 /* Products */,
+				43688D44017295B1DD212136 /* Pods */,
+				63E2C0E9A06370478C4007DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		B606BC1D1F5EB92A002555A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B606BC1C1F5EB92A002555A2 /* Cubes Demo.app */,
+				B606BC1C1F5EB92A002555A2 /* CubesDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,36 +87,56 @@
 		B606BC1E1F5EB92A002555A2 /* Cubes Demo */ = {
 			isa = PBXGroup;
 			children = (
+				B64866BD1F60227E008A5158 /* Colors */,
 				B606BC331F5EBA0C002555A2 /* CubeNode.swift */,
 				B606BC231F5EB92A002555A2 /* ViewController.swift */,
 				B606BC1F1F5EB92A002555A2 /* AppDelegate.swift */,
-				B606BC251F5EB92A002555A2 /* Main.storyboard */,
+			);
+			path = "Cubes Demo";
+			sourceTree = "<group>";
+		};
+		B64866BC1F60225D008A5158 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				B606BC2D1F5EB92A002555A2 /* Info.plist */,
+				B606BC251F5EB92A002555A2 /* Main.storyboard */,
 				B606BC2A1F5EB92A002555A2 /* LaunchScreen.storyboard */,
 				B606BC281F5EB92A002555A2 /* Assets.xcassets */,
 				B606BC211F5EB92A002555A2 /* art.scnassets */,
 			);
-			path = "Cubes Demo";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B64866BD1F60227E008A5158 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				B64866BE1F602B76008A5158 /* colors.json */,
+				B64866BA1F602259008A5158 /* Colors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B606BC1B1F5EB92A002555A2 /* Cubes Demo */ = {
+		B606BC1B1F5EB92A002555A2 /* CubesDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B606BC301F5EB92A002555A2 /* Build configuration list for PBXNativeTarget "Cubes Demo" */;
+			buildConfigurationList = B606BC301F5EB92A002555A2 /* Build configuration list for PBXNativeTarget "CubesDemo" */;
 			buildPhases = (
+				7428AA08BCE5A5528D2CDC1B /* [CP] Check Pods Manifest.lock */,
 				B606BC181F5EB92A002555A2 /* Sources */,
 				B606BC191F5EB92A002555A2 /* Frameworks */,
 				B606BC1A1F5EB92A002555A2 /* Resources */,
+				6DEBE6602169B6487614E97E /* [CP] Embed Pods Frameworks */,
+				4863D31FAE1673BFE1D796BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Cubes Demo";
+			name = CubesDemo;
 			productName = "Cubes Demo";
-			productReference = B606BC1C1F5EB92A002555A2 /* Cubes Demo.app */;
+			productReference = B606BC1C1F5EB92A002555A2 /* CubesDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +155,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B606BC171F5EB92A002555A2 /* Build configuration list for PBXProject "Cubes Demo" */;
+			buildConfigurationList = B606BC171F5EB92A002555A2 /* Build configuration list for PBXProject "CubesDemo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B606BC1B1F5EB92A002555A2 /* Cubes Demo */,
+				B606BC1B1F5EB92A002555A2 /* CubesDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64866BF1F602C0A008A5158 /* colors.json in Resources */,
 				B606BC221F5EB92A002555A2 /* art.scnassets in Resources */,
 				B606BC2C1F5EB92A002555A2 /* LaunchScreen.storyboard in Resources */,
 				B606BC291F5EB92A002555A2 /* Assets.xcassets in Resources */,
@@ -138,12 +188,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4863D31FAE1673BFE1D796BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cubes Demo/Pods-Cubes Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DEBE6602169B6487614E97E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cubes Demo/Pods-Cubes Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cubes Demo/Pods-Cubes Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7428AA08BCE5A5528D2CDC1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cubes Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B606BC181F5EB92A002555A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B606BC241F5EB92A002555A2 /* ViewController.swift in Sources */,
+				B64866BB1F602259008A5158 /* Colors.swift in Sources */,
 				B606BC341F5EBA0C002555A2 /* CubeNode.swift in Sources */,
 				B606BC201F5EB92A002555A2 /* AppDelegate.swift in Sources */,
 			);
@@ -280,11 +385,12 @@
 		};
 		B606BC311F5EB92A002555A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE739FE47A0FAA8C915D7BC1 /* Pods-Cubes Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KD9PQ46B2N;
-				INFOPLIST_FILE = "Cubes Demo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "adamov.oleg.Cubes-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,11 +401,12 @@
 		};
 		B606BC321F5EB92A002555A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E957B9A8BF2DE06F096E5BBB /* Pods-Cubes Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KD9PQ46B2N;
-				INFOPLIST_FILE = "Cubes Demo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "adamov.oleg.Cubes-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,7 +418,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B606BC171F5EB92A002555A2 /* Build configuration list for PBXProject "Cubes Demo" */ = {
+		B606BC171F5EB92A002555A2 /* Build configuration list for PBXProject "CubesDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B606BC2E1F5EB92A002555A2 /* Debug */,
@@ -320,7 +427,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B606BC301F5EB92A002555A2 /* Build configuration list for PBXNativeTarget "Cubes Demo" */ = {
+		B606BC301F5EB92A002555A2 /* Build configuration list for PBXNativeTarget "CubesDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B606BC311F5EB92A002555A2 /* Debug */,

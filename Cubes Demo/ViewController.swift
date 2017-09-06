@@ -17,13 +17,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var startYPan: CGFloat = 0
     var yPosition: Float = 0
     var cubes = [CubeNode]()
-    let colors = [UIColor.red, UIColor.green, UIColor.lightGray, UIColor.black, UIColor.purple]
-        /*
-        UIColor(red: 0, green: 144, blue: 255, alpha: 1),
-        UIColor(red: 0, green: 220, blue: 99, alpha: 1),
-        UIColor(red: 0, green: 236, blue: 235, alpha: 1),
-        UIColor(red: 255, green: 79, blue: 0, alpha: 1),
-        UIColor(red: 219, green: 29, blue: 0, alpha: 1)]*/
+    let colors = Colors()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +75,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     
     func appendNode(with position: SCNVector3) {
-        let index = Int(arc4random_uniform(UInt32(colors.count)))
-        let cube = CubeNode(position: position, color: self.colors[index])
+        let index = Int(arc4random_uniform(UInt32(colors.all.count)))
+        let cube = CubeNode(position: position, color: self.colors.all[index].uiColor)
         objectNode.addChildNode(cube)
         cubes.append(cube)
     }

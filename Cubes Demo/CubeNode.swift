@@ -76,46 +76,6 @@ class CubeNode: SCNNode {
 }
 
 
-/*extension SCNNode {
-    
-    private class var cubeSize: CGFloat { return 0.1 }
-    
-    private class var chamfer: CGFloat { return 0.005 }
-    
-    
-    class func cube(position vector: SCNVector3) -> SCNNode {
-        let geometry = SCNBox(width: cubeSize, height: cubeSize, length: cubeSize, chamferRadius: chamfer)
-        geometry.materials = [SCNMaterial(), SCNMaterial(), SCNMaterial(), SCNMaterial(), SCNMaterial(), SCNMaterial()]
-        let node = SCNNode(geometry: geometry)
-        node.position = vector
-        return node
-    }
-    
-    
-    func findFace(with index: Int) -> CubeFace? {
-        guard let materials = geometry?.materials, index < materials.count else { return nil }
-        return CubeFace(rawValue: index)
-    }
-    
-    
-    func newPosition(from face: CubeFace) -> SCNVector3 {
-        var x = self.position.x
-        var y = self.position.y
-        var z = self.position.z
-        let size = Float(SCNNode.cubeSize)
-        switch face {
-        case .front:  z += size
-        case .back:   z -= size
-        case .left:   x -= size
-        case .right:  x += size
-        case .top:    y += size
-        case .bottom: y -= size
-        }
-        return SCNVector3(x, y, z)
-    }
-}*/
-
-
 extension SCNVector3: Equatable {
     
     public static func ==(lhs: SCNVector3, rhs: SCNVector3) -> Bool {

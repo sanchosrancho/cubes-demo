@@ -18,6 +18,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var yPosition: Float = 0
     var cubes = [CubeNode]()
     let colors = Colors()
+    var currentColor: Color!
+    var colorButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -28,28 +30,43 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene = SCNScene()
         sceneView.autoenablesDefaultLighting = true
         
+        self.currentColor = self.colors.all[0]
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
 
         sceneView.scene.rootNode.addChildNode(objectNode)
-        
         appendNode(with: SCNVector3(0, 0, -0.3))
         
+        addBackButton()
+        addColorButton()
+ 
+        setupPan()
+    }
+    
+    
+    func addBackButton() {
         let button = UIButton(frame: CGRect(x: 4, y: 26, width: 80, height: 30))
         button.backgroundColor = UIColor.white.withAlphaComponent(0.6)
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitle("Back", for: .normal)
         button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         sceneView.addSubview(button)
-        
-        setupPan()
     }
-    
     
     @objc func backButtonPressed() {
         guard cubes.count > 0 else { return }
         let last = cubes.removeLast()
         last.removeFromParentNode()
+    }
+    
+    
+    func addColorButton() {
+        let button = UIButton(frame: CGRect(x: 19, y: 70, width: 50, height: 50))
+        button.backgroundColor = self.currentColor.uiColor
+        button.layer.cornerRadius = 25
+        self.colorButton = button
+        sceneView.addSubview(button)
     }
     
     
@@ -75,8 +92,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     
     func appendNode(with position: SCNVector3) {
-        let index = Int(arc4random_uniform(UInt32(colors.all.count)))
-        let cube = CubeNode(position: position, color: self.colors.all[index].uiColor)
+        let cube = CubeNode(position: position, color: currentColor.uiColor)
         objectNode.addChildNode(cube)
         cubes.append(cube)
     }

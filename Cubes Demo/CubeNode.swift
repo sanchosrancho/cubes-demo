@@ -22,7 +22,6 @@ class CubeNode: SCNNode {
         let geometry = SCNBox(width: CubeNode.size, height: CubeNode.size, length: CubeNode.size, chamferRadius: CubeNode.chamfer)
         geometry.chamferSegmentCount = CubeNode.chamfersCount
         var materials = [SCNMaterial]()
-        print(color)
         for _ in 0..<6 {
             materials.append(getMaterial(with: color))
         }

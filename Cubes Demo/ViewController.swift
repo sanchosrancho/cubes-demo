@@ -18,8 +18,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var yPosition: Float = 0
     var cubes = [CubeNode]()
     let colors = Colors()
-    var currentColor: Color!
-    var colorButton: UIButton!
+    var currentColor: Color! {
+        didSet { colorButton?.backgroundColor = currentColor.uiColor }
+    }
+    var colorButton: UIButton?
     
     
     override func viewDidLoad() {
@@ -65,8 +67,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let button = UIButton(frame: CGRect(x: 19, y: 70, width: 50, height: 50))
         button.backgroundColor = self.currentColor.uiColor
         button.layer.cornerRadius = 25
+        button.addTarget(self, action: #selector(colorButtonPressed), for: .touchUpInside)
         self.colorButton = button
         sceneView.addSubview(button)
+    }
+    
+    @objc func colorButtonPressed() {
+        let colorPickerView = ColorPickerView(inFrame: self.view.bounds, colors: self.colors.all)
+        colorPickerView.delegate = self
+        self.view.addSubview(colorPickerView)
     }
     
     
@@ -179,5 +188,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+}
+
+
+extension ViewController: ColorPickerViewDelegate {
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, didSelect color: Color) {
+        self.currentColor = color
+        colorPickerView.removeFromSuperview()
     }
 }
